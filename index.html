@@ -17,14 +17,102 @@
             </div>
         </nav>
     </header>
+    <!-- Tabla -->
     <main class="main-content">
         <div class="crud-container">
             <div class="crud-header">
                 <h1>Clientes Registrados</h1>
-                <button class="button is-success">Success</button>
+                <button class="button is-success" id="abrirRegistroModal">Agregar</button>
             </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Domicilio</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Abraham</td>
+                        <td>Castelan</td>
+                        <td>Cruz</td>
+                        <td>112321321</td>
+                        <td>bibolinijuan@gmail.com</td>
+                        <td>
+                            <button class="button is-warning">Actualizar</button>
+                            <button class="button is-danger">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
+    <!-- Tarjeta para ingresar elemento a la tabla. Bulma no incluye JavaScript -->
+    <div class="modal" id="modal">
+        <!-- Background de la tarjeta -->
+        <div class="modal-background"></div>
+        <!-- Tarjeta -->
+        <div class="modal-card">
+            <!-- Header -->
+            <header class="modal-card-head">
+                <p class="modal-card-title">Nuevo cliente</p>
+                <button class="delete" aria-label="close" id="cerrarRegistroModal"></button>
+            </header>
+            <!-- Lo que contiene la tarjeta (formulario) -->
+            <section class="modal-card-body">
+                <form id="formulario-registro">
+                    <div class="field">
+                        <label class="label">Nombre :</label>
+                        <div class="control">
+                            <input class="input" type="text" name="nombre" placeholder="Ingresa tu nombre">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Apellido :</label>
+                        <div class="control">
+                            <input class="input" type="text" name="apellido" placeholder="Ingresa tu apellido">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Domicilio :</label>
+                        <div class="control">
+                            <input class="input" type="text" name="domicilio" placeholder="Ingresa tu domicilio">
+                        </div>
+                    </div>
+                    <!-- Mejoras:   Copiar y pegar el div de Bulma. Borrar el p con clase "help in-success"
+                                    Borrar la clase "has-icons-right", la clase "is-success" del input (da borde verde) y el span de abajo
+                                    Cambiar de type "text" a "tel"
+                                    Quitar el valor por defecto (value="bulma")
+                                    Cambiar el icono a "fas fa-phone"-->
+                    <div class="field">
+                        <label class="label">Telefono :</label>
+                        <div class="control">
+                            <input class="input" type="tel" name="telefono" placeholder="+54 1234-123123">
+                        </div>
+                    </div>
+                    <!-- Mejoras:   Copiar y pegar lo de telefono
+                                    Cambiar type a "email" e icono a "fas fa-envelope" -->
+                    <div class="field">
+                        <label class="label">Correo :</label>
+                        <div class="control">
+                            <input class="input" type="email" name="correo" placeholder="ejemplo@company.com">
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- Pie -->
+            <footer class="modal-card-foot">
+                <button class="button is-success">Guardar</button>
+            </footer>
+        </div>
+    </div>
+    <script src="routes/app.js"></script>
 </body>
 
 </html>
