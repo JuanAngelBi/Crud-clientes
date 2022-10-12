@@ -1,0 +1,52 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+:root {
+    --green: #00540f;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Header */
+.navbar {
+    background-color: var(--green);
+}
+
+.navbar-item {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease-in-out all;
+    height: 8vh;
+    /* vh: Altura visual */
+}
+
+.navbar-item:hover {
+    color: var(--black) !important;
+}
+
+/* Main */
+
+.main-content {
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crud-container {
+    width: 70%;
+    padding: 2rem 3rem;
+    overflow: auto;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+}
+
+.crud-container h1{
+    font-weight: bold;
+    font-size: 16px;
+}
